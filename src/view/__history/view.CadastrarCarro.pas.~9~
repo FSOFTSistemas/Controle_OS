@@ -1,0 +1,47 @@
+unit view.CadastrarCarro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TfrmNewCarro = class(TForm)
+    edtModelo: TEdit;
+    cbbCombustivel: TComboBox;
+    cbbSecretaria: TComboBox;
+    edtMotorista: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    memoObs: TMemo;
+    Button1: TButton;
+    Button2: TButton;
+    edtPlaca: TMaskEdit;
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmNewCarro: TfrmNewCarro;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmNewCarro.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+
+
+
+end.

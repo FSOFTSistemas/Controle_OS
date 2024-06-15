@@ -1,0 +1,26 @@
+program Controle_OS;
+
+uses
+  Vcl.Forms,
+  Principal in 'src\view\Principal.pas' {frmPrincipal},
+  view.empresa in 'src\view\view.empresa.pas' {frmEmpresa},
+  modulo in 'src\model\repository\modulo.pas' {DataModule1: TDataModule},
+  view.secretaria in 'src\view\view.secretaria.pas' {frmSecretaria},
+  view.carro in 'src\view\view.carro.pas' {frmCarro},
+  view.novaOS in 'src\view\view.novaOS.pas' {frmNovaOS},
+  view.todasOS in 'src\view\view.todasOS.pas' {frmTodasOS};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmEmpresa, frmEmpresa);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TfrmSecretaria, frmSecretaria);
+  Application.CreateForm(TfrmCarro, frmCarro);
+  Application.CreateForm(TfrmNovaOS, frmNovaOS);
+  Application.CreateForm(TfrmTodasOS, frmTodasOS);
+  Application.Run;
+end.

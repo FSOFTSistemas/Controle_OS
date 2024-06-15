@@ -1,0 +1,38 @@
+unit view.novaOS;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+
+type
+  TfrmNovaOS = class(TForm)
+    Edit1: TEdit;
+    Image1: TImage;
+    procedure Image1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmNovaOS: TfrmNovaOS;
+
+implementation
+
+{$R *.dfm}
+
+uses view.locVeiculo;
+
+procedure TfrmNovaOS.Image1Click(Sender: TObject);
+begin
+  frmLocVeic := TfrmLocVeic.Create(self);
+  frmLocVeic.ShowModal;
+
+
+end;
+
+end.

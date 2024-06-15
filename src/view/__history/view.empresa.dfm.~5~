@@ -1,0 +1,27 @@
+object frmEmpresa: TfrmEmpresa
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Empresas'
+  ClientHeight = 442
+  ClientWidth = 288
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poMainFormCenter
+  TextHeight = 15
+  object btNovaEmpresa: TButton
+    Left = 0
+    Top = 0
+    Width = 288
+    Height = 41
+    Align = alTop
+    Caption = 'Nova secretaria'
+    TabOrder = 0
+    ExplicitLeft = -12
+    ExplicitWidth = 300
+  end
+end

@@ -1,0 +1,52 @@
+object frmTodasOS: TfrmTodasOS
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Todas as Ordens de Servi'#231'o'
+  ClientHeight = 617
+  ClientWidth = 1127
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poMainFormCenter
+  WindowState = wsMaximized
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1127
+    Height = 57
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 576
+    Width = 1127
+    Height = 41
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitLeft = 392
+    ExplicitTop = 368
+    ExplicitWidth = 185
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 57
+    Width = 1127
+    Height = 519
+    Align = alClient
+    BorderStyle = bsNone
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+end
