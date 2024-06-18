@@ -13,7 +13,8 @@ uses
   view.CadastrarCarro in 'src\view\view.CadastrarCarro.pas' {frmNewCarro},
   view.CadastrarSecretaria in 'src\view\view.CadastrarSecretaria.pas' {frmNovaSecretaria},
   view.CadastrarEmpresa in 'src\view\view.CadastrarEmpresa.pas' {frmCadastrarEmpresa},
-  view.locVeiculo in 'src\view\view.locVeiculo.pas' {frmLocVeic};
+  view.locVeiculo in 'src\view\view.locVeiculo.pas' {frmLocVeic},
+  uFormat in 'src\controllers\Units\uFormat.pas';
 
 {$R *.res}
 

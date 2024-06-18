@@ -85,7 +85,7 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <DCC_ExeOutput>.\install</DCC_ExeOutput>
-        <DCC_DcuOutput>.\dcu</DCC_DcuOutput>
+        <DCC_DcuOutput>.\install\dcu</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>Controle_OS_Icon.ico</Icon_MainIcon>
@@ -154,6 +154,7 @@
             <Form>frmLocVeic</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\controllers\Units\uFormat.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

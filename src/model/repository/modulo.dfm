@@ -121,6 +121,7 @@ object moduloConn: TmoduloConn
     Top = 168
   end
   object qrOS: TFDQuery
+    Active = True
     Connection = conexao
     SQL.Strings = (
       

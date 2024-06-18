@@ -22,10 +22,17 @@ type
     procedure edtVeiculoChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mudarTipoExecute(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
+    FPlaca: string;
+    FIdCarro: Integer;
+    procedure SetPlaca(const Value: string);
+    procedure SetIdCarro(const Value: Integer);
   public
     { Public declarations }
+    property Placa: string read FPlaca write FPlaca;
+    property IdCarro: Integer read FIdCarro write FIdCarro;
   end;
 
 var
@@ -35,7 +42,37 @@ implementation
 
 {$R *.dfm}
 
-uses modulo;
+uses modulo, view.novaOS;
+
+procedure TfrmLocVeic.DBGrid1DblClick(Sender: TObject);
+var
+  SelectedFieldPlaca: TField;
+  SelectedFieldIdCarro: TField;
+begin
+  if not DBGrid1.DataSource.DataSet.IsEmpty then
+  begin
+    SelectedFieldPlaca := DBGrid1.DataSource.DataSet.FieldByName('PLACA');
+    SelectedFieldIdCarro := DBGrid1.DataSource.DataSet.FieldByName('ID');
+    if Assigned(SelectedFieldPlaca) and Assigned(SelectedFieldIdCarro) then
+    begin
+      FPlaca := SelectedFieldPlaca.AsString;
+      FIdCarro := SelectedFieldIdCarro.AsInteger;
+      ModalResult := mrOk;
+    end;
+  end
+  else
+  begin
+    ShowMessage('Nenhuma linha selecionada.');
+  end;
+end;
+procedure TfrmLocVeic.SetPlaca(const Value: string);
+begin
+  FPlaca := Value;
+end;
+procedure TfrmLocVeic.SetIdCarro(const Value: Integer);
+begin
+  FIdCarro := Value;
+end;
 
 procedure TfrmLocVeic.edtVeiculoChange(Sender: TObject);
 begin

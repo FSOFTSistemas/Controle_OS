@@ -60,6 +60,7 @@ object frmLocVeic: TfrmLocVeic
       Top = 26
       Width = 501
       Height = 23
+      CharCase = ecUpperCase
       TabOrder = 1
       OnChange = edtVeiculoChange
     end
@@ -72,13 +73,14 @@ object frmLocVeic: TfrmLocVeic
     Align = alClient
     BorderStyle = bsNone
     DataSource = dsVeiculo
-    Options = [dgTitles, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    Options = [dgTitles, dgIndicator, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnDblClick = DBGrid1DblClick
     Columns = <
       item
         Expanded = False

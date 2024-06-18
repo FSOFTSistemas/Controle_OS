@@ -3,7 +3,7 @@ object frmNovaOS: TfrmNovaOS
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nova Ordem de Servi'#231'o'
-  ClientHeight = 280
+  ClientHeight = 475
   ClientWidth = 895
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,6 +12,7 @@ object frmNovaOS: TfrmNovaOS
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poMainFormCenter
+  OnShow = FormShow
   TextHeight = 15
   object Image1: TImage
     Left = 175
@@ -214,8 +215,9 @@ object frmNovaOS: TfrmNovaOS
     Height = 23
     BorderStyle = bsNone
     TabOrder = 0
+    OnKeyPress = edtVeiculoKeyPress
   end
-  object DateTimePicker1: TDateTimePicker
+  object dt1: TDateTimePicker
     Left = 224
     Top = 32
     Width = 97
@@ -229,6 +231,7 @@ object frmNovaOS: TfrmNovaOS
     Top = 32
     Width = 210
     Height = 23
+    CharCase = ecUpperCase
     TabOrder = 2
   end
   object edtResponsavel: TEdit
@@ -236,6 +239,7 @@ object frmNovaOS: TfrmNovaOS
     Top = 32
     Width = 346
     Height = 23
+    CharCase = ecUpperCase
     TabOrder = 3
   end
   object memoServico: TMemo
@@ -245,17 +249,9 @@ object frmNovaOS: TfrmNovaOS
     Height = 97
     TabOrder = 4
   end
-  object edtTotal: TMaskEdit
-    Left = 760
-    Top = 200
-    Width = 127
-    Height = 33
-    TabOrder = 5
-    Text = ''
-  end
   object btSalvarOS: TButton
-    Left = 306
-    Top = 239
+    Left = 298
+    Top = 434
     Width = 105
     Height = 33
     Caption = 'Salvar'
@@ -265,11 +261,12 @@ object frmNovaOS: TfrmNovaOS
     Font.Name = 'Roboto'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
+    OnClick = btSalvarOSClick
   end
   object btCancelar: TButton
-    Left = 464
-    Top = 239
+    Left = 456
+    Top = 434
     Width = 105
     Height = 33
     Caption = 'Cancelar'
@@ -279,7 +276,70 @@ object frmNovaOS: TfrmNovaOS
     Font.Name = 'Roboto'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btCancelarClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 21
+    Top = 240
+    Width = 866
+    Height = 161
+    Caption = 'Imgens Miniaturas'
+    TabOrder = 7
+    object img1: TImage
+      Left = 16
+      Top = 24
+      Width = 105
+      Height = 105
+      Stretch = True
+    end
+    object img2: TImage
+      Left = 154
+      Top = 24
+      Width = 105
+      Height = 105
+      Stretch = True
+    end
+    object btCarrega1: TButton
+      Left = 24
+      Top = 133
+      Width = 89
+      Height = 25
+      Caption = 'Carregar'
+      TabOrder = 0
+      OnClick = btCarrega1Click
+    end
+    object btCarrega2: TButton
+      Left = 162
+      Top = 133
+      Width = 89
+      Height = 25
+      Caption = 'Carregar'
+      TabOrder = 1
+      OnClick = btCarrega2Click
+    end
+  end
+  object edtTotal: TEdit
+    Left = 738
+    Top = 191
+    Width = 149
+    Height = 43
+    AutoSize = False
+    TabOrder = 8
+    OnEnter = edtTotalEnter
+    OnExit = edtTotalExit
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 672
+    Top = 416
+  end
+  object qrOS_Temp: TFDQuery
+    Connection = moduloConn.conexao
+    Left = 600
+    Top = 200
+  end
+  object OpenPictureDialog2: TOpenPictureDialog
+    Left = 792
+    Top = 408
   end
 end
