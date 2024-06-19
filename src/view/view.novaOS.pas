@@ -118,7 +118,6 @@ begin
       MemoryStream := TMemoryStream.Create;
       MemoryStream1 := TMemoryStream.Create;
       Bitmap := TBitmap.Create;
-
       // Verificar extensão do arquivo e carregar imagens
       try
         if (ext = '.BMP') then
@@ -129,7 +128,6 @@ begin
         end
         else
           Jpg.LoadFromFile(OpenPictureDialog1.FileName);
-
         if (ext1 = '.BMP') then
         begin
           Bitmap.LoadFromFile(OpenPictureDialog2.FileName);
@@ -138,7 +136,6 @@ begin
         end
         else
           Jpg1.LoadFromFile(OpenPictureDialog2.FileName);
-
         Jpg.SaveToStream(MemoryStream);
         Jpg1.SaveToStream(MemoryStream1);
         MemoryStream.Position := 0;
@@ -148,14 +145,11 @@ begin
         Jpg1.Free; // Liberar os objetos TJPEGImage
         Bitmap.Free;
       end;
-
       // Converter o texto do valor para Double
       if not TryStrToFloat(edtTotal.Text, valor) then
         raise Exception.Create('Valor inválido!');
-
       // Extrair e converter idEmpresa de cbbEmpresa.Text
       idEmpresa := StrToInt(Trim(GetFirstPart(cbbEmpresa.Text, '|')));
-
       qrOS_Temp.Close;
       qrOS_Temp.SQL.Clear;
       qrOS_Temp.SQL.Add('INSERT INTO OS (DATA, ID_CARRO, ID_EMPRESA, SERVICO, RESPONSAVEL, VALOR, IMG1, FOTO2) ' +
@@ -168,9 +162,7 @@ begin
       qrOS_Temp.Params.ParamByName('valor').AsFloat := valor;
       qrOS_Temp.Params.ParamByName('img1').LoadFromStream(MemoryStream, ftBlob);
       qrOS_Temp.Params.ParamByName('foto2').LoadFromStream(MemoryStream1, ftBlob);
-
       qrOS_Temp.ExecSQL;
-
       ShowMessage('Salvo com sucesso!');
      Close;
     except

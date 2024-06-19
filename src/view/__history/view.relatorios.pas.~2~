@@ -1,0 +1,27 @@
+unit view.relatorios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxSmartMemo, frxClass, frxDBSet,
+  frCoreClasses;
+
+type
+  TfrmRel = class(TForm)
+    frxRel: TfrxReport;
+    frxDBOS: TfrxDBDataset;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRel: TfrmRel;
+
+implementation
+
+{$R *.dfm}
+
+end.
